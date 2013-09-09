@@ -65,7 +65,9 @@
 		<dandelion.datatables.version>0.8.14</dandelion.datatables.version>
 
 		<mysql.version>5.1.22</mysql.version>
-
+		
+		<!-- tomcat webapp directory -->
+		<tomcat.webapp.directory>H:\apache\tomcat8\webapps</tomcat.webapp.directory>
 	</properties>
 
 	<dependencies>
@@ -398,6 +400,23 @@
 				<configuration>
 					<warName>petclinic</warName>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<!-- <phase>compile</phase> -->
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<move file="${project.basedir}/target/petclinic.war" tofile="${tomcat.webapp.directory}/petclinic.war"/>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
