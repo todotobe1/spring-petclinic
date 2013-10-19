@@ -36,6 +36,7 @@
 		<tomcat-jdbc.version>7.0.42</tomcat-jdbc.version>
 		<ehcache.version>2.6.6</ehcache.version>
 		<hsqldb.version>2.3.0</hsqldb.version>
+		<mysql.version>5.1.26</mysql.version>
 
 		<!-- AOP -->
 		<aspectj.version>1.7.3</aspectj.version>
@@ -64,8 +65,6 @@
 		<webjars-jquery.version>1.9.0</webjars-jquery.version>
 		<dandelion.datatables.version>0.8.14</dandelion.datatables.version>
 
-		<mysql.version>5.1.22</mysql.version>
-		
 		<!-- tomcat webapp directory -->
 		<tomcat.webapp.directory>H:\apache\tomcat8\webapps</tomcat.webapp.directory>
 	</properties>
@@ -216,6 +215,11 @@
 		<!-- For MySql only -->
 		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> <version>${mysql.version}</version> </dependency> -->
 		<!-- HIBERNATE -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -401,7 +405,7 @@
 					<warName>petclinic</warName>
 				</configuration>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.7</version>
 				<executions>
@@ -417,7 +421,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
